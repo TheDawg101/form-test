@@ -116,9 +116,10 @@ input {
     border-radius: 5px;
 }
 
-.auto:focus {
+.auto:focus, .non-auto:focus {
     outline: none;
     border: 2px solid var(--color-theme-2);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 3px 10px 2px;
 }
 
 .auto:valid {
@@ -150,14 +151,14 @@ input {
     width: max(100px, 15vw);
 }
 
-#submitBtn.valid {
+.valid {
     outline: none;
     border: 2px solid green;
 }
 
-#submitBtn.invalid {
+.invalid {
     outline: none;
-    border: 2px solid green;
+    border: 2px solid red;
 }
 
 #submitBtn:active {
