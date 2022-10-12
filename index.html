@@ -9,57 +9,57 @@
     <title>Sign-Up</title>
 </head>
 <body>
-    <div class="page">
-        <div class="left-container">
-            <div id="logo">
+    <div class="page-container">
+        <div class="page-item left">
+            <div class="left-item" id="logo">
                 <img src="resources/icon.png" alt="background image of trees">
                 <h1>The Form Project</h1>
             </div>
         </div>
-        <form action class="right-container">
+        <form action class="page-item right">
             <div class="section1">
-                <div class="header">
-                    <p id="text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi dolor, tincidunt vitae blandit in, suscipit quis sapien. Phasellus ornare mauris orci, sit amet condimentum magna placerat eu. Donec hendrerit id ex ac venenatis. Nullam nec dolor at quam suscipit malesuada. Mauris vitae arcu maximus, rhoncus nibh ac, suscipit orci.</p>
-                    <p id="text2">Continue the journey below!</p>
+                <div class="right-item header">
+                    <p class="text-container" id="text1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nisi dolor, tincidunt vitae blandit in, suscipit quis sapien. Phasellus ornare mauris orci, sit amet condimentum magna placerat eu. Donec hendrerit id ex ac venenatis. Nullam nec dolor at quam suscipit malesuada. Mauris vitae arcu maximus, rhoncus nibh ac, suscipit orci.</p>
+                    <p class="text-container" id="text2">Continue the journey below!</p>
                 </div>
             </div>
-            <div class="section2">
+            <div class="right-item section2">
                 <fieldset>
-                    <p>Fill in the required fields</p>
+                    <p class="input-header">Fill in the required fields</p>
                   
-                    <div>
+                    <div class="input-container">
                         <label for="first-name">First Name</label>
                         <input class="auto" type="text" id="first-name" name="first-name" placeholder="Jim" minlength="1" required>
                     </div>
                   
-                    <div>
+                    <div class="input-container">
                         <label for="last-name">Last Name</label>
                         <input class="auto" type="text" id="last-name" name="last-name" placeholder="McBob" minlength="1" required>
                     </div>
              
-                    <div>
+                    <div class="input-container">
                         <label for="email">Email</label>
                         <input class="auto" type="email" id="email" name="email" placeholder="example@email.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                     </div>
                   
-                    <div>
+                    <div class="input-container">
                         <label for="tel">Telephone</label>
                         <input class="auto" type="tel" id="tel" name="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter a valid phone number with area code" placeholder="xxx-xxx-xxxx" required>
                     </div>
               
-                    <div>
+                    <div class="input-container">
                         <label for="password">Password</label>
                         <input class="auto" type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                     </div>
                   
-                    <div>
+                    <div class="input-container">
                         <label for="confirm-password">Confirm Password</label>
                         <input class="non-auto" type="password" id="confirm-password" name="confirm-password" required>
                     </div>
                 </fieldset>
             </div>
-            <div class="section3">
-                <div>
+            <div class="right-item section3">
+                <div class="submit-container">
                     <button id="submitBtn" type="submit">Create Account</button>
                     <p #sign-in>Already a Member? <a href="/login.html">Sign-in</a></p>
                 </div>

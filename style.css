@@ -5,84 +5,80 @@
 
 body {
     margin: 0;
-    position: fixed;
 }
 
 * {
     font-family: 'Poppins', sans-serif;
 }
 
-.page {
+.page-container {
     display: flex;
-    width: 100vw;
     height: 100vh;
-    margin: 0;
+    width: 100vw;
 }
 
-.page
+.left {
+    flex-grow: 1;
+    width: 40%;
+    min-width: 300px;
+    background-image: url(resources/background.jpg);
+    background-size: cover;
+}
 
-#logo {
+.left-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 16px 0;
-    gap: 1vw;
+    gap: 15px;
     position: relative;
     top: 20vh;
+    background-color: rgba(0, 0, 0, 0.6);
     color: whitesmoke;
 }
 
-#logo > img {
+.left-item>img {
     height: 100px;
     width: 100px;
     filter: saturate(500%) contrast(800%) brightness(500%) 
       invert(100%) sepia(0%) hue-rotate(0deg); 
 }
 
-.left-container {
-    background-image: url(resources/background.jpg);
-    background-size: cover;
-    width: 40vw;
-}
-
-.right-container {
+.right {
+    flex-grow: 2;
+    width: 60%;
+    min-width: 500px;
     display: flex;
     flex-direction: column;
-    width: 60vw;
-    height: max(1000px, 100vh);
 }
 
 .section1 {
-    height: max(300px, 35vh);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
     background-color: var(--color-theme-1);
+}
+
+.text-container {
+    margin-left: 30px;
 }
 
 .header {
     position: relative;
-    top: 25%;
-    padding: 30px;
-}
-
-#text1 {
-    font-weight: 500;
-    width: 90%;
-    font-size: 1.2rem;
+    top: 50%;
 }
 
 #text2 {
-    font-weight: 800;
-    width: 90%;
-    font-size: 1.4rem;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .section2 {
-    height: max(350px, 30vh);
-    box-shadow: rgba(0, 0, 0, 1) 0px 10px 40px, rgba(0, 0, 0, .1) 0px 1px 1px;
+    display: flex;
+    flex-grow: 1;
+    box-shadow: rgba(0, 0, 0, 1) 0px 10px 20px, rgba(0, 0, 0, .1) 0px 1px 1px;
 }
 
 fieldset {
-    height: 100%;
     border: 0;
     display: flex;
     flex-flow: row wrap;
@@ -91,7 +87,7 @@ fieldset {
     padding: 0;
 }
 
-fieldset>p {
+.input-header {
     margin:0%;
     margin-top: 20px;
     width: 100%;
@@ -102,7 +98,7 @@ fieldset>p {
     left: 0;
 }
 
-fieldset>div {
+.input-container {
     display: flex;
     flex-flow: column wrap;
     width: max(10px,34%);
@@ -116,23 +112,12 @@ input {
     border-radius: 5px;
 }
 
-.auto:focus, .non-auto:focus {
-    outline: none;
-    border: 2px solid var(--color-theme-2);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 3px 10px 2px;
-}
-
-.auto:valid {
-    outline: none;
-    border: 2px solid green;
-}
-
 .section3 {
-    height: 35vh;
+    flex-grow: 2;
     background-color: var(--color-theme-1);
 }
 
-.section3>div {
+.submit-container {
     margin-left: 30px;
     padding: 0;
     margin-top: 30px;
@@ -141,14 +126,13 @@ input {
 #submitBtn {
     color: white;
     background-color: var(--color-theme-2);
-    align-content: center;
     font-size: 1rem;
     font-weight: 700;
     border-radius: 5px;
     border:0ch;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 3px 10px 2px;
     height: 50px;
-    width: max(100px, 15vw);
+    width: 150px;
 }
 
 .valid {
@@ -176,70 +160,55 @@ a {
     font-weight: bold;
 }
 
+.auto:focus, .non-auto:focus {
+    outline: none;
+    border: 2px solid var(--color-theme-2);
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 3px 10px 2px;
+}
 
+.auto:valid {
+    outline: none;
+    border: 2px solid green;
+}
 
 /* This is to adjust to mobile display */
 
 @media only screen and (max-width: 600px)  {
-    .page {
-        flex-flow: column;
-        height: auto;
-        text-align: center;
-    }
-    .left-container {
-        width: 100vw;
-        height: 15vh;
-        background-size: 100vw;
-    }
-    #logo {
-        width: 100vw;
-        gap: 10px;
-        position: fixed;
-        top: 0;
-    }
-    .right-container {
-        width: auto;
-        height: auto;
-    }
-    .section1 {
-        width: auto;
-        margin-top: 30px;
-
-    }
-    .section1, .section2, .section3 {
-        padding: 10px 20px;
-    }
-    #text2 {
-        padding: 20px 0;
-        margin: 0;
-    }
-    .section2 {
-        flex-flow: column nowrap;
-        align-items: center;
-
-    }
-    .section2>div {
-        text-align: left;
-        width: auto;
-        font-size: 0.9em;
-        justify-content: center;
-        align-items: center;
-    }
-    input {
-        font-size: 0.9rem;
-        height: 1.5rem;
-        width: 70vw;
-    }
-    button,
-    #sign-in{
+    .page-container {
         display: flex;
-        justify-content: center;
-        margin-bottom: 0px;
+        flex-direction: column;
     }
-    button{
-        margin-bottom: 0px;
-        width: 60vw;
-        padding: 10px 5px;
+
+    .left {
+        min-width: 400px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+    }
+
+    .right {
+        flex-grow: 1;
+        min-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-item {
+        flex-grow: 1;
+        display: flex;
+        position: static;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .section3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
 }
+
+
