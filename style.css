@@ -86,6 +86,7 @@ fieldset {
     flex-flow: row wrap;
     gap: 5% 10%;
     margin-left: 30px;
+    margin-bottom: 15px;
     padding: 0;
 }
 
