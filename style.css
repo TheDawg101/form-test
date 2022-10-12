@@ -58,10 +58,6 @@ body {
     background-color: var(--color-theme-1);
 }
 
-.text-container {
-    margin-left: 30px;
-}
-
 .header {
     position: relative;
     top: 50%;
@@ -187,6 +183,9 @@ a {
         height: 200px;
         display: flex;
         align-items: center;
+        background-size: 100%;
+        background-position: 75%;
+        background-repeat: no-repeat;
     }
 
     .right {
@@ -209,6 +208,11 @@ a {
 
     .header {
         position: static;
+    }
+
+    .text-container {
+        margin: 20px 30px;
+        text-align: center;
     }
 
     .section2 {
@@ -258,9 +262,7 @@ a {
     }
 
     .submit-container {
-        margin-left: 10px;
-        padding: 0;
-        margin-top: 30px;
+        margin: 30px;
     }
 
 }
